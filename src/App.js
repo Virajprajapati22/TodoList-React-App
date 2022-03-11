@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { List } from "./Components/Lists/List";
+import Navbar from "./Components/Navbar/Navbar";
+import React, { useState } from "react";
 
-function App() {
+const App = () => {
+  const [task, setTask] = useState([]);
+
+  const onChangeInput = (e) => {
+    const newTask = e.target.value;
+    setTask(newTask);
+  };
+
+  const [myTask, setMyTask] = useState([]);
+
+  const onSubmitHandler = () => {
+    const temp = task;
+    setMyTask([...myTask, temp]);
+    setTask([]);
+  };
+
+  const onDeleteHandler = (index) => {
+      console.log(index);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>
+        <Navbar size={myTask.length} />
+      </div>
+      <div>
+        <List
+          Task={task}
+          myTask={myTask}
+          onSubmit={onSubmitHandler}
+          onChangeInput={onChangeInput}
+          onDelete={(index) => onDeleteHandler.bind(this, index)}
+        />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
