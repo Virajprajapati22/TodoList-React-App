@@ -1,0 +1,29 @@
+#nav_main {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  background-color: rgb(211, 156, 36);
+}
+
+.nav_span {
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.btn_login {
+  padding: 4px;
+  margin-right: 10px;
+  background-color: #b37210;
+  border: 2px solid #b37210;
+  color: rgb(234, 238, 172);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn_login:hover {
+  border: 3px solid #c9831b;
+  color: #fff;
+}

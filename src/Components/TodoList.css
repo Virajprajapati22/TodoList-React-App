@@ -23,3 +23,8 @@ li {
   border: 0.5px solid transparent;
   border-radius: 21px;
 }
+
+.btn_own:hover{
+  color: #fff;
+  border: 2px solid rgb(161, 141, 36);
+}
