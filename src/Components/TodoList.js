@@ -8,7 +8,9 @@ const TodoList = (props) => {
       <button
         type="button"
         class="btn_own"
-        onClick={() => {props.delete(props.id)}}
+        onClick={() => {
+          props.delete(props.id);
+        }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
